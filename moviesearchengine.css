@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(138, 124, 124); 
+  color: white;
+} 
+#container {
+  display: grid;
+  grid-template-columns: repeat(4, 22%);
+  gap: 3%;
+}
+.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+img {
+  height: 300px;
+  width: 250px;
+}
