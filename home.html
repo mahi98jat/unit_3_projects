@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <body></body>
+</html>
+<script type="module">
+  import myHeader from "./components/header.js";
+
+  document.body.innerHTML = myHeader();
+  import { appendFood, getFood } from "./scripts/foodData.js";
+  getFood("https://www.themealdb.com/api/json/v1/1/search.php?s")
+    .then((res) => {
+      return res;
+    })
+    .then((res) => {
+      console.log(res);
+
+      var parent = document.getElementById("data");
+      console.log(parent);
+      parent.innerHTML = null;
+      appendFood(res, parent);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+</script>
